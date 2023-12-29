@@ -10,7 +10,7 @@
     }
     });
 
-    function kirimEmail() {
+function kirimEmail() {
     // Mengumpulkan nilai dari elemen formulir HTML
     const nama = document.getElementById('nama').value;
     const email = document.getElementById('email').value;
@@ -28,12 +28,12 @@
     // Kirim email
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-        console.error(error);
+            console.error(error);
+            alert('Terjadi kesalahan saat mengirim email. Silakan coba lagi.');
         } else {
-        console.log('Email terkirim: ' + info.response);
+            console.log('Email terkirim: ' + info.response);
+            alert('Email terkirim dengan sukses!');
         }
     });
-
-    // Mengembalikan false untuk mencegah perilaku formulir default
     return false;
-    }
+}
