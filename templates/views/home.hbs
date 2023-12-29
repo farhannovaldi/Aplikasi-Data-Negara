@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{judulApk}}</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="icon" href="/img/icon.jpeg">
+</head>
+
+<body>
+    <div class="main-content">
+        {{>header}}
+        <div class="country-wrapper box-container">
+            <section id="country-section" class="country-section">
+                {{#if loggedInUser}}
+                <h1>Selamat datang, {{loggedInUser}}!</h1>
+                {{else}}
+                <p>Anda belum login.</p>
+                {{/if}}
+                <form id="form-negara">
+                    <select id="negara" required>
+                        <option value="">Pilih negara di sini</option>
+                    </select>
+                    <button type="submit">Cari</button>
+                </form>
+                <div id="country-info">
+                    <h2>Informasi Negara:</h2>
+                    <p>Nama Negara: <span id="nama-negara"></span></p>
+                    <p>Ibukota: <span id="ibukota"></span></p>
+                    <p>Penduduk: <span id="populasi"></span></p>
+                    <p>Wilayah: <span id="luas"></span> km<sup>2</sup></p>
+                    <p>Bendera: <img id="bendera" width="100"></p>
+                    <p></p>
+                </div>
+            </section>
+        </div>
+
+
+        <section id="about-section" class="about-section">
+            <h2>About Us</h2>
+            <p>Selamat datang di Aplikasi Data Negara! Aplikasi ini merupakan portal informatif yang memungkinkan Anda
+                untuk melakukan
+                eksplorasi mendalam terhadap beragam informasi negara dari seluruh penjuru dunia dengan kenyamanan dan
+                kemudahan.
+                Manfaatkan menu "Home" untuk menggali data negara, mulai dari nama, ibukota, jumlah penduduk, luas
+                wilayah, hingga
+                melihat benderanya. Dengan begitu, Anda dapat memperoleh pemahaman yang lebih mendalam dan lengkap
+                mengenai keberagaman
+                karakteristik setiap negara yang ada di dunia ini. Selamat menikmati pengalaman eksplorasi Anda!</p>
+            <h3>Meet the Team</h3>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="/img/avatar1.jpeg" alt="Farhan Novaldi">
+                    <p><strong>Farhan Novaldi</strong><br>21343024</p>
+                </div>
+                <div class="team-member">
+                    <img src="/img/avatar2.png" alt="Ella Dwipujana Asyani">
+                    <p><strong>Ella Dwipujana Asyani</strong><br>21343022</p>
+                </div>
+            </div>
+
+            <h3>User Stories</h3>
+            <div class="user-testimonials">
+                <blockquote>
+                    "Aplikasi ini sangat membantu saya dalam menemukan fakta-fakta menarik tentang negara-negara yang
+                    sebelumnya saya tidak tahu."
+                    <cite>— Rayhan Ahadi</cite>
+                </blockquote>
+
+                <blockquote>
+                    "Data Negara App adalah aplikasi yang sangat informatif dan mudah digunakan. Saya suka bagaimana
+                    saya
+                    bisa menemukan berbagai informasi penting tentang negara dengan cepat."
+                    <cite>— Rizki Sandira</cite>
+                </blockquote>
+
+                <blockquote>
+                    "Sebagai penggemar pengetahuan global, aplikasi ini menjadi sahabat setia saya. Terima kasih atas
+                    kemudahan akses informasinya!"
+                    <cite>— Gilang Bagindo</cite>
+                </blockquote>
+
+                <blockquote>
+                    "Aplikasi ini memberikan pandangan yang sangat jelas dan ringkas tentang berbagai negara. Saya
+                    menikmati penggunaannya setiap kali."
+                    <cite>— Alkindi Syamsi</cite>
+                </blockquote>
+
+                <blockquote>
+                    "Sangat direkomendasikan! Aplikasi ini memberikan informasi yang akurat dan bermanfaat tentang
+                    berbagai negara di dunia."
+                    <cite>— Reviza Dekry</cite>
+                </blockquote>
+            </div>
+        </section>
+
+        <section id="feedback-section" class="feedback-section">
+            <div class="user-feedback">
+                <form onsubmit="return kirimEmail();">
+                    <h2>Contact us</h2>
+                    <h3>Bagikan Ulasan Anda atau Laporkan Masalah</h3>
+                    <h3>Silakan isi formulir berikut</h3>
+                    <input type="text" id="nama" placeholder="Masukkan Nama Anda" required>
+                    <input type="email" id="email" placeholder="Masukkan Alamat Email Anda" required>
+                    <input type="text" id="subjek" placeholder="Masukka n Subjek Ulasan atau Masalah" required>
+                    <textarea id="pesan" rows="4" placeholder="Masukkan Pesan atau Ulasan Anda" required></textarea>
+                    <button type="submit">Kirim</button>
+                </form>
+            </div>
+        </section>
+
+        {{>footer}}
+        <script src="/js/app.js"></script>
+        <script src="/js/contact.js"></script>
+    </div>
+</body>
+
+</html>
