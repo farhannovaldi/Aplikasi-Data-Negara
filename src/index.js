@@ -15,7 +15,9 @@ app.use(session({
 
 // Middleware untuk mengecek status login
 function checkLoginStatus(req, res, next) {
-    res.locals.loggedInUser = req.session.loggedInUser;
+    if (req.session) {
+        res.locals.loggedInUser = req.session.loggedInUser;
+    }
     next();
 }
 
