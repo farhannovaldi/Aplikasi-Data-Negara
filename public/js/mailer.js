@@ -13,15 +13,14 @@ function kirimEmail() {
     // Mengumpulkan nilai dari elemen formulir HTML
     const nama = document.getElementById('nama').value;
     const email = document.getElementById('email').value;
-    const subjek = document.getElementById('subjek').value;
     const pesan = document.getElementById('pesan').value;
 
     // Pengaturan email
     const mailOptions = {
-        from: process.env.EMAIL_USER,
+        from: user,
         to: 'aplikasinegara@gmail.com',
-        subject: subjek,
-        text: `Nama: ${nama}\nEmail: ${email}\nSubjek: ${subjek}\nPesan: ${pesan}`
+        subject:`Berikut laporan dari Email: ${email}`,
+        text: `Nama: ${nama}\nPesan: ${pesan}`
     };
 
     // Kirim email
